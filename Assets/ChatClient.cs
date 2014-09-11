@@ -51,8 +51,13 @@ public class ChatClient : MonoBehaviour {
 		}
 	}
 
-	void OnDisable() {
+	void OnApplicationQuit()
+	{
 		WarpClient.GetInstance().Disconnect();
+	}
+
+	void OnEnable() {
+
 	}
 
 	public static void Log(string msg) {
